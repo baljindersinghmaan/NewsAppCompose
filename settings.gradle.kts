@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "NewsAppCompose"
 include(":app")
+include(":untilities")

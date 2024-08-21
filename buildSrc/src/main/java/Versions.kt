@@ -8,4 +8,6 @@ object Versions {
     const val lifecycleRuntimeKtx = "2.8.4"
     const val activityCompose = "1.9.1"
     const val composeBom = "2024.04.01"
+    const val hilt = "2.48"
+    const val hiltCompiler = "1.0.0-alpha01"
 }
