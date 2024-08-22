@@ -74,6 +74,9 @@ dependencies {
 
     implementation(project(Modules.untilities))
     implementation(Dependencies.hiltAndroid)
-    implementation(Dependencies.hiltCompiler)
-    implementation(Dependencies.hiltAndroidCompiler)
+    kapt(Dependencies.hiltCompiler)
+    kapt(Dependencies.hiltAndroidCompiler)
+}
+kapt {
+    correctErrorTypes = true
 }
