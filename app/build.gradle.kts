@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.hilt)
-    kotlin("kapt")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 
 }
 
@@ -73,9 +73,16 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(project(Modules.untilities))
-    implementation(Dependencies.hiltAndroid)
-    kapt(Dependencies.hiltCompiler)
-    kapt(Dependencies.hiltAndroidCompiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.retrofit)
+    implementation( libs.converter.gson)
+    implementation( libs.okhttp)
+    implementation(libs.moshi.kotlin)
+    implementation( libs.logging.interceptor)
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
 }
 kapt {
     correctErrorTypes = true
