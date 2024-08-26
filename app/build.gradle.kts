@@ -82,7 +82,9 @@ dependencies {
     implementation( libs.okhttp)
     implementation(libs.moshi.kotlin)
     implementation( libs.logging.interceptor)
-    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation (libs.converter.moshi)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
 }
 kapt {
     correctErrorTypes = true
