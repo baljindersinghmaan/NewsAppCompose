@@ -4,6 +4,7 @@ import com.example.newsappcompose.data.AppConstant
 import com.example.newsappcompose.data.api.ApiInterface
 import com.example.newsappcompose.data.datasource.NewsDataSource
 import com.example.newsappcompose.data.datasource.NewsDataSourceImpl
+import com.example.newsappcompose.ui.repository.NewsRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -47,6 +48,12 @@ class AppModule {
     @Singleton
     fun providerNewsSource(apiInterface: ApiInterface) : NewsDataSource {
         return NewsDataSourceImpl(apiInterface)
+    }
+
+    @Singleton
+    @Provides
+    fun provideNewsRepository(newsDataSource: NewsDataSource) : NewsRepository {
+        return NewsRepository(newsDataSource)
     }
 
 
