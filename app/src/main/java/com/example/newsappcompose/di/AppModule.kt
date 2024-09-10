@@ -21,6 +21,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModule {
+
+    @Provides
+    @Singleton
     fun providerRetrofit(): Retrofit {
         val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BASIC
@@ -44,8 +47,9 @@ class AppModule {
         return retrofit.create(ApiInterface::class.java)
     }
 
-    @Provides
+
     @Singleton
+    @Provides
     fun providerNewsSource(apiInterface: ApiInterface) : NewsDataSource {
         return NewsDataSourceImpl(apiInterface)
     }
